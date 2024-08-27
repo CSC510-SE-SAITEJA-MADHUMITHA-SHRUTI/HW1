@@ -3,9 +3,11 @@ def incrementAndCheckEven(a):
     print("incremented value",a)
     if(a%2==0):
         print("Is even")
+        return 1
     else:
         print("Is not even")
 
-    return a//2
+    return 0
 
 a = incrementAndCheckEven(3)
+print(a)
