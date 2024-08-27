@@ -10,4 +10,3 @@ def incrementAndCheckEven(a):
     return 0
 
 a = incrementAndCheckEven(3)
-print(a)
