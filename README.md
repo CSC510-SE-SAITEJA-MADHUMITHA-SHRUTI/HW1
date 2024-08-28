@@ -11,3 +11,7 @@
 
 # Coverage
 ![Coverage](https://codecov.io/github/your-repo/branch/main/graph/badge.svg)
+
+# status badge
+![workflow status](https://github.com/github/HW1/actions/workflows/main.yml/badge.svg)
+
