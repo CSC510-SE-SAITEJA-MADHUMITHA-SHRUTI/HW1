@@ -20,9 +20,9 @@ jobs:
         pip install pytest pytest-cov
         pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=tests --cov-report=xml --cov-report=html
     - name: Coverage Badge
-      uses: we-cli/coverage-badge-action@v1.0.1
+      uses: codecov/codecov-action@v3
       with:
-        file_path: 'coverage.svg'  # Path to the generated coverage badge
-        coverage_file: 'coverage.xml'
+        files: coverage.xml
+        token: ${{ secrets.CODECOV_TOKEN }}
 
    
