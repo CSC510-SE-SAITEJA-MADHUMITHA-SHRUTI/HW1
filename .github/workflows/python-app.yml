@@ -23,13 +23,6 @@ jobs:
       uses: we-cli/coverage-badge-action@v1.0.1
       with:
         file_path: 'coverage.svg'  # Path to the generated coverage badge
+        coverage_file: 'coverage.xml'
 
-    - name: Commit Coverage Badge
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add coverage.svg
-        git commit -m 'Update coverage badge'
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   
