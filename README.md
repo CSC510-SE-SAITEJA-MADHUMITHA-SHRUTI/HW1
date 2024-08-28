@@ -13,5 +13,5 @@
 ![Coverage](https://codecov.io/github/your-repo/branch/main/graph/badge.svg)
 
 # status badge
-![example workflow](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/workflows.yml/badge.svg)
+![example workflow](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/main.yml/badge.svg)
 
