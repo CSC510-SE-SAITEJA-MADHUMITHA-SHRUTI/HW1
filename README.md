@@ -15,3 +15,8 @@
 # status badge
 ![example workflow](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/python-app.yml/badge.svg)
 
+# pylint
+![Pylint](https://img.shields.io/github/workflow/status/username/repo/CI?label=pylint)
+
+# Bandit
+![Bandit](https://img.shields.io/github/workflow/status/username/repo/CI?label=bandit)
