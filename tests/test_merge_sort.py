@@ -1,10 +1,10 @@
 import pytest
 from hw2_debugging import merge_sort
 
-def test_merge_sort_empty():
+def test_merge_sort_empty_array():
     assert merge_sort([]) == []
 
-def test_merge_sort_single_element():
+def test_merge_sort_one_element():
     assert merge_sort([1]) == [1]
 
 def test_merge_sort_multiple_elements():
