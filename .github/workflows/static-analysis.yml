@@ -24,21 +24,26 @@ jobs:
     - name: Install dependencies
       run: |
         pip install pylint autopep8 bandit pytest
+    
+    - name: Create post_trace directory
+      run: |
+        mkdir -p post_trace
 
     - name: Run autopep8
       run: |
         autopep8 --in-place --aggressive --aggressive hw2_debugging.py
-        autopep8 --in-place --aggressive --aggressive rand.py
 
-    - name: Run pylint
+    - name: Run pylint for hw2 debugging
       run: |
-        pylint hw2_debugging.py >> post_trace/pylint hw2_debugging.txt
-        pylint hw2_debugging.py >> post_trace/pylint rand.txt
+        pylint hw2_debugging.py >> post_trace/pylint_hw2_debugging.txt
+
+    - name: Run pylint for rand
+      run: |
+        pylint rand.py >> post_trace/pylint_rand.txt
 
     - name: Run bandit
       run: |
-        bandit -r . -o post_trace/bandit hw2_debugging.txt
-        bandit -r . -o post_trace/post_trace/bandit rand.txt
+        bandit -r . -o post_trace/bandit_hw2_debugging.txt
 
     - name: Run tests
       run: |
