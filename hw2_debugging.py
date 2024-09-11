@@ -46,7 +46,7 @@ def recombine(left_arr, right_arr):
     return merged_arr
 
 
-array = random.sample(range(100), 10)
+array = random.sample(range(100), 20)
 arr_out = merge_sort(array)
 
 print(arr_out)
