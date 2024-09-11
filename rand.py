@@ -1,19 +1,19 @@
 """
-This module contains a function to generate a random array using the `shuf` command
-to get random numbers and populate an input array.
+This module contains a function to generate a random array using Python's `random` module
 """
 
-import subprocess
+import random
 
 
 def random_array(arr):
     """
-    Fills an array with random numbers generated using the `shuf` command.
+    Fills an array with random numbers using Python's `random.sample`.
     
     """
+    # Generate random integers between 1 and 20 and populate the input array
+    random_numbers = random.sample(range(1, 21), len(arr))
     for i, _ in enumerate(arr):
-        shuffled_num = subprocess.run(["shuf", "-i1-20", "-n1"], capture_output=True, check=True)
-        arr[i] = int(shuffled_num.stdout)
+        arr[i] = random_numbers[i]
     return arr
 
 
