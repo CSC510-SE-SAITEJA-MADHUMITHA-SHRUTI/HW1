@@ -1,4 +1,4 @@
-name: Static Analysis CI
+name: StaticAnalysisCI
 
 on:
   push:
