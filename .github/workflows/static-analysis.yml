@@ -1,0 +1,45 @@
+name: Static Analysis CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install pylint autopep8 bandit pytest
+
+    - name: Run autopep8
+      run: |
+        autopep8 --in-place --aggressive --aggressive hw2_debugging.py
+        autopep8 --in-place --aggressive --aggressive rand.py
+
+    - name: Run pylint
+      run: |
+        pylint hw2_debugging.py >> post_trace/pylint hw2_debugging.txt
+        pylint hw2_debugging.py >> post_trace/pylint rand.txt
+
+    - name: Run bandit
+      run: |
+        bandit -r . -o post_trace/bandit hw2_debugging.txt
+        bandit -r . -o post_trace/post_trace/bandit rand.txt
+
+    - name: Run tests
+      run: |
+        pytest > test_results.txt
