@@ -1,0 +1,36 @@
+name: Python CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install autopep8 pylint flake8 pytest
+
+    - name: Lint with autopep8
+      run: autopep8 --diff hw2_debugging.py
+
+    - name: Lint with pylint
+      run: pylint hw2_debugging.py
+
+    - name: Lint with flake8
+      run: flake8 hw2_debugging.py
+
+    - name: Run tests
+      run: pytest
