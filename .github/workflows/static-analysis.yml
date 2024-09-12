@@ -43,7 +43,7 @@ jobs:
 
     - name: Run bandit
       run: |
-        bandit -r /workspaces/HW1/hw2_debugging.py -o /workspaces/HW1/post_trace/bandit_hw2_debugging.txt -f txt -v
+        bandit -r /workspaces/HW1/hw2_debugging.py
 
     - name: Run tests
       run: |

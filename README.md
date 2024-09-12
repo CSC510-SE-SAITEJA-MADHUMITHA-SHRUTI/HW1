@@ -14,10 +14,7 @@
 
 # status badge (Python app)
 ![example workflow](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/python-app.yml/badge.svg)
-
-# status badge (static analysis) 
 ![example workflow](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/static-analysis.yml/badge.svg)
-
 
 # pylint
 ![pylint](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/static_analysis.yml/badge.svg)
