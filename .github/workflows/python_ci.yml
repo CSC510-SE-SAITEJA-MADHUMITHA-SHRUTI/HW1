@@ -2,12 +2,14 @@ name: Python CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
-  lint:
+  lint-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,16 +23,20 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install autopep8 pylint flake8 pytest
+        pip install pylint bandit autopep8 pytest
 
-    - name: Lint with autopep8
-      run: autopep8 --diff hw2_debugging.py
+    # Step 1: Run autopep8 for PEP8 compliance
+    - name: Run autopep8
+      run: autopep8 --diff --exit-code .
 
-    - name: Lint with pylint
+    # Step 2: Run pylint for static analysis
+    - name: Run pylint
       run: pylint hw2_debugging.py
 
-    - name: Lint with flake8
-      run: flake8 hw2_debugging.py
+    # Step 3: Run bandit for security analysis
+    - name: Run bandit
+      run: bandit -r .
 
-    - name: Run tests
-      run: pytest
+    # Step 4: Run pytest to test the merge_sort function
+    - name: Run pytest
+      run: pytest test_merge_sort.py
