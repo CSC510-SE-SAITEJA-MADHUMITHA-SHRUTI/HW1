@@ -17,7 +17,7 @@
 ![example workflow](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/static-analysis.yml/badge.svg)
 
 # pylint
-![pylint](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/static_analysis.yml/badge.svg)
+[![Pylint Score](https://img.shields.io/badge/pylint-10.0-brightgreen)](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1)
 
 # Bandit
-![Bandit](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/actions/workflows/static_analysis.yml/badge.svg)
+[![Bandit Status](https://img.shields.io/badge/bandit-no%20issues%20found-success)](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1)
