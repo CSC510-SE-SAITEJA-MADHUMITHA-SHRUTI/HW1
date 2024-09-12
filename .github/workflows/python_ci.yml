@@ -25,18 +25,14 @@ jobs:
       run: |
         pip install pylint bandit autopep8 pytest
 
-    # Step 1: Run autopep8 for PEP8 compliance
     - name: Run autopep8
       run: autopep8 --diff --exit-code .
 
-    # Step 2: Run pylint for static analysis
     - name: Run pylint
       run: pylint hw2_debugging.py
 
-    # Step 3: Run bandit for security analysis
     - name: Run bandit
       run: bandit -r .
 
-    # Step 4: Run pytest to test the merge_sort function
     - name: Run pytest
       run: pytest test_merge_sort.py
