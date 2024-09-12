@@ -20,7 +20,9 @@
 
 
 # pylint
-![Pylint](https://img.shields.io/github/workflow/status/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/StaticAnalysisCI?label=pylint)
+
+[![Pylint Status](https://img.shields.io/badge/pylint-10.00-brightgreen)](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1)
 
 # Bandit
-![Bandit](https://img.shields.io/github/workflow/status/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1/StaticAnalysisCI?label=bandit)
+
+[![Bandit Status](https://img.shields.io/badge/bandit-0-red)](https://github.com/CSC510-SE-SAITEJA-MADHUMITHA-SHRUTI/HW1)
