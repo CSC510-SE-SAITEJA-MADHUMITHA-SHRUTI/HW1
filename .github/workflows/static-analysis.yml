@@ -48,23 +48,3 @@ jobs:
     - name: Run tests
       run: |
         pytest > test_results.txt
-
-    - name: Extract Pylint score
-      id: pylint_score
-      run: |
-        pylint_score=$(grep 'Your score' post_trace/pylint_hw2_debugging.txt | awk '{print $3}')
-        echo "Pylint score: $pylint_score"
-        echo "::set-output name=score::$pylint_score"
-
-    - name: Extract Bandit score
-      id: bandit_score
-      run: |
-        bandit_score=$(grep 'Total issues' post_trace/bandit_hw2_debugging.txt | awk '{print $3}')
-        echo "Bandit score: $bandit_score"
-        echo "::set-output name=score::$bandit_score"
-
-    - name: Upload scores as artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: lint-scores
-        path: post_trace/
