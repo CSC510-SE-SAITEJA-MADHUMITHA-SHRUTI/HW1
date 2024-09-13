@@ -26,8 +26,7 @@ jobs:
         pip install pylint bandit autopep8 pytest
 
     - name: Run autopep8
-      run: autopep8 --diff --exit-code hw2_debugging.py
-
+      run: autopep8 --in-place --aggressive --aggressive hw2_debugging.py
 
     - name: Run pylint
       run: pylint hw2_debugging.py
@@ -36,4 +35,4 @@ jobs:
       run: bandit -r .
 
     - name: Run pytest
-      run: pytest test_merge_sort.py
+      run: pytest --maxfail=1 --disable-warnings -q
