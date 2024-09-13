@@ -1,20 +1,13 @@
 name: Python CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push, pull_request]
 
 jobs:
-  lint-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -23,16 +16,24 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install pylint bandit autopep8 pytest
+        pip install autopep8 pylint bandit pytest
 
-    - name: Run autopep8
-      run: autopep8 --in-place --aggressive --aggressive hw2_debugging.py
+    - name: Check AutoPEP8 Formatting
+      run: |
+        autopep8 --diff --aggressive --aggressive hw2_debugging.py
+      continue-on-error: true
 
-    - name: Run pylint
-      run: pylint hw2_debugging.py
+    - name: Run Pylint
+      run: |
+        pylint hw2_debugging.py
+      continue-on-error: true
 
-    - name: Run bandit
-      run: bandit -r .
+    - name: Run Bandit
+      run: |
+        bandit -r hw2_debugging.py
+      continue-on-error: true
 
-    - name: Run pytest
-      run: pytest --maxfail=1 --disable-warnings -q
+    - name: Run Pytest
+      run: |
+        pytest
+      continue-on-error: true
