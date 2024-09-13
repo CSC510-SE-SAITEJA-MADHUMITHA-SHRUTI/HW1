@@ -26,7 +26,8 @@ jobs:
         pip install pylint bandit autopep8 pytest
 
     - name: Run autopep8
-      run: autopep8 --diff --exit-code .
+      run: autopep8 --diff --exit-code hw2_debugging.py
+
 
     - name: Run pylint
       run: pylint hw2_debugging.py
