@@ -1,6 +1,9 @@
 #!/bin/bash
 
-grep -rl "sample" dataset1/ | xargs -n 1 grep -o "CSC510" | sort | uniq -c | awk '$1 >= 3 {print $2}' | sed 's/file_/filtered_/g' > output.txt
+grep -rl "sample" dataset1/ | \
+xargs -I{} sh -c 'count=$(grep -o "CSC510" "{}" | wc -l); if [ "$count" -ge 3 ]; then echo "$count {}"; fi' | \
+sort -k1,1nr -k2,2n | \
+sed 's/file_/filtered_/g; s/^.* //g' > output.txt
 
-# Output
+# output
 cat output.txt
