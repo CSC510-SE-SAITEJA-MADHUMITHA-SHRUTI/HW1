@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Finding ID (PID) of infinite.sh
 PID=$(pgrep -f infinite.sh)
 
